@@ -7,6 +7,38 @@ local keys = {}
 local mouse_bindins = {}
 local launch_menu = {}
 
+keys = {
+    {
+        key = 'v',
+        mods = 'ALT',
+        action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain'},
+    },
+    {
+        key = 's',
+        mods = 'ALT',
+        action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain'},
+    },
+    {
+        key = 'h',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Left',
+    },
+    {
+        key = 'j',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Down',
+    },
+    {
+        key = 'k',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Up',
+    },
+    {
+        key = 'l',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Right',
+    },
+}
 
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
@@ -43,4 +75,5 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 
 config.launch_menu = launch_menu
+config.keys = keys
 return config
